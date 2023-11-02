@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahyoga</title>
+    <script src="./js/jquery-3.6.4.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+html{
+    overflow: hidden;
+}
+*{
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    font-family: 'Nanum Myeongjo', serif;
+    text-align: center;
+    color: white;
+}
+a{
+    display: block;
+    text-decoration: none;
+}
+img{
+    /* display: block; */
+    width: 100%;
+}
+.close_but{
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+    position: absolute;
+    top: 0.5%;
+    right: 3%;
+    font-size: 15px;
+    line-height: 60px;
+    letter-spacing: 2px;
+    background: #d9d9d9;
+}
+.menu_page{
+    background: url(./img/bg_menu.jpg);
+    position: relative;
+}
+.vol_title{
+    width: 100%;
+    height: 9%;
+    margin-bottom: 10%;
+    display: none;
+    position: absolute;
+    top: 5%;
+    left: 0;
+}
+.top_title{
+    width: 100%;
+    font-size: 1.2em;
+}
+.bottom_title{
+    width: 100%;
+    font-size: 2.5em;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+.vol_5{
+    display: block;
+}
+.out_box{
+    width: 90%;
+    height: 75%;
+    overflow-y: scroll;
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    margin-left: -45%;
+}
+.out_box::-webkit-scrollbar{
+    width: 5px;
+    background: rgba(255, 255, 255, 0.514);
+    border-radius: 3px;
+}
+.out_box::-webkit-scrollbar-thumb{
+    background: white;
+    border-radius: 3px;
+}
+.img_box{
+    width: 50%;
+    height: 20%;
+    margin: 20% auto;
+    background: white;
+    overflow: hidden;
+    /* -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0); */
+    /* isolation: isolate; */
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    transition-duration: 0.5s;
+}
+.img_box:first-child{
+    margin: 30% auto;
+    transform:scale(1.8);
+}
+.img_box:nth-child(2){
+    transform:scale(1.5);
+}
+.img_box:last-child{
+    margin-bottom: 80%;
+}
+.img_box:nth-child(4)>img{
+    transform: scale(1.1);
+}
+</style>
+
+    <script>
+        $(document).ready(function(){
+            let ww=$(window).width();
+            let wh=$(window).height();
+            
+            resizing();
+
+            function resizing(){
+                ww=$(window).width();
+                wh=$(window).height();
+                $(".menu_page").css({
+                    width:ww,
+                    height:wh
+                })
+            }
+
+            $(window).resize(function(){
+                resizing();
+            });
+            
+            // $(".img_box").css({
+            //     overflow: 'hidden'
+            // })
+            $(".out_box").scroll(function(){
+                let i=$(this).scrollTop()/10;
+                $("p").text(i);
+                if(0<=i && i<13){
+                    $(".img_05").css({transform:'scale(1.8)',marginBottom: '30%'})
+                    $(".img_04").css({transform:'scale(1.5)',marginBottom: '30%'})
+                    $(".img_03").css({transform:'scale(1)'})
+                    $(".vol_title").not(".vol_5").fadeOut();
+                    $(".vol_5").fadeIn()
+
+                }else if(12<i && i<36){
+                    $(".img_05").css({transform:'scale(1.5)',marginBottom: '30%'})
+                    $(".img_04").css({transform:'scale(1.8)',marginBottom: '30%'})
+                    $(".img_03").css({transform:'scale(1.5)'})
+                    $(".vol_title").not(".vol_4").fadeOut();
+                    $(".vol_4").fadeIn()
+                }else if(36<i && i<56){
+                    $(".img_05").css({transform:'scale(1)',marginBottom: '30%'})
+                    $(".img_04").css({transform:'scale(1.5)',marginBottom: '30%'})
+                    $(".img_03").css({transform:'scale(1.8)',marginBottom: '30%'})
+                    $(".img_02").css({transform:'scale(1.5)'})
+                    $(".vol_title").not(".vol_3").fadeOut();
+                    $(".vol_3").fadeIn();
+                }else if(55<i && i<73){
+                    $(".img_04").css({transform:'scale(1)',marginBottom: '30%'})
+                    $(".img_03").css({transform:'scale(1.5)',marginBottom: '30%'})
+                    $(".img_02").css({transform:'scale(1.8)',marginBottom: '30%'})
+                    $(".img_01").css({transform:'scale(1.5)'})
+                    $(".vol_title").not(".vol_2").fadeOut();
+                    $(".vol_2").fadeIn();
+                }else if(i>72){
+                    $(".img_03").css({transform:'scale(1)',marginBottom: '30%'})
+                    $(".img_02").css({transform:'scale(1.5)',marginBottom: '30%'})
+                    $(".img_01").css({transform:'scale(1.8)'})
+                    $(".vol_title").not(".vol_1").fadeOut();
+                    $(".vol_1").fadeIn();
+                }
+            });
+        });//end
+    
+    </script>
+</head>
+<body>
+    <div class="mobile">
+        <section class="menu_page">
+            <a href="#" class="close_but">close</a>
+            <div class="vol_title vol_5">
+                <div class="top_title">magazine</div>
+                <div class="bottom_title">Relax your mind</div>
+            </div>
+            <div class="vol_title vol_4">
+                <div class="top_title">magazine</div>
+                <div class="bottom_title">Life is all about Balance</div>
+            </div>
+            <div class="vol_title vol_3">
+                <div class="top_title">magazine</div>
+                <div class="bottom_title">All Bodies are Good Bodies</div>
+            </div>
+            <div class="vol_title vol_2">
+                <div class="top_title">magazine</div>
+                <div class="bottom_title">Yoga is for everybody</div>
+            </div>
+            <div class="vol_title vol_1">
+                <div class="top_title">magazine</div>
+                <div class="bottom_title">Ah yoga is magical moment of balancing</div>
+            </div>
+            <div class="out_box">
+                <a href="#" class="img_box img_05">
+                    <img src="./img/menu_vol_5.jpg" alt="">
+                </a>
+                <a href="#" class="img_box img_04">
+                    <img src="./img/menu_vol_4.jpg" alt="">
+                </a>
+                <a href="#" class="img_box img_03">
+                    <img src="./img/menu_vol_3.jpg" alt="">
+                </a>
+                <a href="#" class="img_box img_02">
+                    <img src="./img/menu_vol_2.jpg" alt="">
+                </a>
+                <a href="#" class="img_box img_01">
+                    <img src="./img/menu_vol_1.jpg" alt="">
+                </a>
+            </div>
+           
+            </div>
+            
+        </section>
+    </div>
+    
+</body>
+</html>

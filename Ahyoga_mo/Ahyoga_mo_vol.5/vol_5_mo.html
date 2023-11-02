@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahyoga</title>
+    <link rel="stylesheet" href="./css/vol_5_mo.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+    <script src="./js/jquery-3.6.4.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="./js/vol_5_mo.js"></script>
+    <script>
+        $(document).ready(function(){
+            let ww=$(window).width();
+            let wh=$(window).height();
+            resizing();
+            function resizing(){
+                ww=$(window).width();
+                wh=$(window).height();
+                $(".vol_5_mo").css({
+                    width:ww,height:wh
+                });
+                $(".move_text").css({
+                    width:ww
+                });
+                $(".bg_text_box").css({
+                    width:ww*3
+                });
+            }
+            $(window).resize(function(){
+                resizing();
+            });
+            bg_text_move();
+            setInterval(function(){
+                bg_text_move()
+            },15000);
+            function bg_text_move(){
+                $(".bg_text_box").animate({
+                    left:-ww
+                },15000,'linear',function(){
+                    $(".move_text").first().appendTo(".bg_text_box")
+                    $(".bg_text_box").css({
+                        left:0
+                    })
+                });
+            };
+            let bg_img=["url(./img/vol_5_1.jpg)","url(./img/vol_5_2.jpg)","url(./img/vol_5_3.jpg)","url(./img/vol_5_4.jpg)","url(./img/vol_5_5.jpg)","url(./img/vol_5_6.jpg)","url(./img/vol_5_7.jpg)","url(./img/vol_5_8.jpg)","url(./img/vol_5_9.jpg)","url(./img/vol_5_10.jpg)"]
+            $(".img_box").css({
+                background:function(index){
+                    return bg_img[index]
+                },
+                backgroundSize:'100%',
+                backgroundRepeat: 'no-repeat'
+            })
+
+
+            var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                color:"white"
+            },
+        });
+        });//end
+        
+      </script>
+</head>
+<body>
+    <div class="vol_5_mo">
+        <div class="bg_text_box top_text">
+            <div class="move_text"><i>TAKE  SMALL SIMPLE STEPS </i>with<i> AH YOGA </i></div>
+            <div class="move_text"><i>TAKE  SMALL SIMPLE STEPS </i>with<i> AH YOGA </i></div>
+            <div class="move_text"><i>TAKE  SMALL SIMPLE STEPS </i>with<i> AH YOGA </i></div>
+        </div>
+        <div class="bg_text_box bottom_text">
+            <div class="move_text"><i>TAKE  SMALL SIMPLE STEPS </i>with<i> AH YOGA </i></div>
+            <div class="move_text"><i>TAKE  SMALL SIMPLE STEPS </i>with<i> AH YOGA </i></div>
+            <div class="move_text"><i>TAKE  SMALL SIMPLE STEPS </i>with<i> AH YOGA </i></div>
+        </div>
+        <div class="title_wrap">
+            <div class="top_title">magazine</div>
+            <div class="bottom_title">Relax your mind</div>
+        </div>
+        <div class="img_box_wrap">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><div class="img_box"></div>
+                    <div class="img_text logo">
+                        “Relax Your Mind”
+                    </div></div>
+                    <div class="swiper-slide"><div class="img_box"></div>
+                    <div class="img_text">
+                        'Ah yoga'는 요가를 하면서 삶의 균형을 찾아가는<br>
+                        건강한 삶들의 이야기를 나누고자<br>
+                        발행한 라이프 스타일 잡지입니다.
+                    </div>
+                    </div>
+                    <div class="swiper-slide"><div class="img_box"></div>
+                    <div class="img_text">
+                        이번 호의 주제는 “Relax Your Mind” 입니다
+                    </div></div>
+                    <div class="swiper-slide"><div class="img_box"></div>
+                    <div class="img_text">
+                        편안하게 이완하고 차분하게 명상하는<br>
+                        주변 사람들의 이양기에 귀기울여 보세요.
+                    </div></div>
+                    <div class="swiper-slide"><div class="img_box"></div>
+                    <div class="img_text">
+                        들숨과 날숨의 순간을 기록한 화보, 다앵한 도구들을 활용한 인요가,<br>
+                        화보와 보기만해도 평온해지는 아사나 시퀀스
+                    </div></div>
+                    <div class="swiper-slide"><div class="img_box"></div>
+                    <div class="img_text">
+                        명상을 제대로 배우거나 경험할 수 있는 공간들과 인물 인터뷰,<br>
+                        완전한 쉼에 도움을 주는 자연친화적인 오브제 화보
+                    </div></div>
+                    <div class="swiper-slide"><div class="img_box"></div>
+                    <div class="img_text">
+                        각자의 방법으로 충분히 이완하고 명상하는 사람들의 인터뷰,<br>
+                        건강한 식단을 담은 레시피
+                    </div></div>
+                    <div class="swiper-slide"><div class="img_box"></div>
+                    <div class="img_text">
+                        인요가를 위한 편안한 요가보 스타일링팁<br>
+                        등 다양한 내용들로 구성했습니다
+                    </div></div>
+                    <div class="swiper-slide"><div class="img_box"></div>
+                    <div class="img_text">
+                        지난 호에 비해 더욱 깊이 있는 내용들로 다가갑니다.
+                    </div></div>
+                    <div class="swiper-slide"><div class="img_box"></div>
+                    <div class="img_text">
+                        <i class="logo">AH YOGA</i>
+                    </div></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+              
+        </div>
+        <a href="#"><div class="back_but">back</div></a>
+        
+    </div>
+</body>
+</html>

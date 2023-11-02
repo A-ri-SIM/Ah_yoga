@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahyoga</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="./js/jquery-3.6.4.js"></script>
+<script src="./js/jquery-ui.js"></script>
+<script src="./js/aos.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    font-family: 'Nanum Myeongjo', serif;
+    text-align: center;
+    color: white;
+}
+img{
+    display: block;
+    width: 100%;
+}
+.close_but{
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+    position: absolute;
+    top: 1%;
+    right: 3%;
+    font-size: 15px;
+    line-height: 60px;
+    letter-spacing: 2px;
+    background: #d9d9d9;
+}
+.menu_page{
+    background: url(./img/bg_menu.jpg);
+    position: relative;
+    padding-top: 20%;
+    box-sizing: border-box;
+}
+.vol_title{
+    width: 100%;
+    height: 9%;
+    margin-bottom: 10%;
+}
+.top_title{
+    font-size: 1.2em;
+}
+.bottom_title{
+    font-size: 2.5em;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+.out_box{
+    width: 90%;
+    height: 50%;
+    /* background: red; */
+    margin: 0 auto;
+    overflow: auto;
+}
+.img_box{
+    width: 100%;
+    height: 50%;
+    background: white;
+    overflow: hidden;
+    margin-bottom: 10%;
+}
+/* .swiper_box{
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+}
+
+.mySwiper{
+    width: 100%;
+    height: 250px;
+}
+.swiper-wrapper{
+    display: block;
+}
+.swiper-slide{
+    width: 92%;
+    margin: 5% auto;
+}
+.swiper-slide:first-child{
+    margin-top: 20%;
+}
+.swiper-slide:last-child{
+    background-position: 0% 15%;
+} */
+</style>
+
+    <script>
+        $(document).ready(function(){
+            let ww=$(window).width();
+            let wh=$(window).height();
+            
+            resizing();
+
+            function resizing(){
+                ww=$(window).width();
+                wh=$(window).height();
+                $(".menu_page").css({
+                    width:ww,
+                    height:wh
+                })
+            }
+
+            $(window).resize(function(){
+                resizing();
+            });
+            let a=$(".out_box").scrollTop();
+            // alert(a);
+            // let bg_img=['url(./img/menu_vol_5.jpg)','url(./img/menu_vol_4.jpg)','url(./img/menu_vol_3.jpg)','url(./img/menu_vol_2.jpg)','url(./img/menu_vol_1.jpg)']
+            // $(".swiper-slide").css({
+            //     background:function(index){
+            //         return bg_img[index]
+            //     },
+            //     backgroundSize: '100%',
+            //     backgroundPosition: '0% 5%'
+            // })
+            // $(".swiper-slide").last().css({
+            //     backgroundPosition: '0% 10%'
+            // })
+            // var swiper = new Swiper(".mySwiper", {
+            // direction: "vertical",
+            // pagination: {
+            //     clickable: true,
+            // },
+            // });
+            AOS.init();
+
+
+        });//end
+    
+    </script>
+</head>
+<body>
+    <div class="mobile">
+        <section class="menu_page">
+            <div class="close_but">close</div>
+            <div class="vol_title">
+                <div class="top_title">magazine</div>
+                <div class="bottom_title">Relax your mind</div>
+            </div>
+            <div class="out_box">
+                <div class="img_box"data-aos="fade-up"
+                data-aos-anchor-placement="top-center"><img src="./img/menu_vol_1.jpg" alt="">
+                </div>
+                <div class="img_box" data-aos="fade-up"
+                data-aos-anchor-placement="top-center"><img src="./img/menu_vol_1.jpg" alt="">
+                </div>
+                <div class="img_box"data-aos="fade-up"
+                data-aos-anchor-placement="top-center"><img src="./img/menu_vol_1.jpg" alt="">
+                </div>
+                <div class="img_box"data-aos="fade-up"
+                data-aos-anchor-placement="top-center"><img src="./img/menu_vol_1.jpg" alt="">
+                </div>
+                <div class="img_box" data-aos="fade-up"
+                data-aos-anchor-placement="top-center"><img src="./img/menu_vol_1.jpg" alt="">
+                </div>
+            </div>
+            <!-- <div class="swiper_box">
+                <div class="mySwiper">
+                 <div class="swiper-wrapper">
+                      <div class="swiper-slide"></div>
+                      <div class="swiper-slide"></div>
+                      <div class="swiper-slide"></div>
+                      <div class="swiper-slide"></div>
+                      <div class="swiper-slide"></div>
+                    </div> 
+                </div> -->
+            </div>
+            
+        </section>
+    </div>
+    
+</body>
+</html>
